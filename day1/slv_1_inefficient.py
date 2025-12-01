@@ -1,7 +1,3 @@
-import datetime
-print("Advent of Code 2025 - Day 1")
-start_time = datetime.datetime.now()
-
 with open('input.txt', 'r') as file:
     data = [line.strip().split() for line in file.readlines()]
 
@@ -25,5 +21,3 @@ for move in moves:
 
 print(f"[Part 1]: Anzahl 0en auf Endposition: {nullAtEndCounter}")
 print(f"[Part 2]: Anzahl 0en beim Durchlaufen: {nullPassingCounter}")
-end_time = datetime.datetime.now()
-print(f"Execution Time: {end_time - start_time}")
