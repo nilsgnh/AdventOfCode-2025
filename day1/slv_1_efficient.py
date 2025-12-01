@@ -1,7 +1,3 @@
-import datetime
-
-start_time = datetime.datetime.now()
-
 with open('input.txt', 'r') as file:
     data = [line.strip().split() for line in file.readlines()]
 
@@ -18,11 +14,8 @@ for direction, distance in moves:
     elif direction == "L":
         nullPassingCounter += (distance - dialCount) // 100 - ((-1)*dialCount // 100)
         dialCount = (dialCount - distance) % 100
-
     if dialCount == 0:
         nullAtEndCounter += 1
+        
 print(f"[Part 1]: Anzahl 0en auf Endposition: {nullAtEndCounter}")
 print(f"[Part 2]: Anzahl 0en beim Durchlaufen: {nullPassingCounter}")
-
-end_time = datetime.datetime.now()
-print(f"Execution Time: {end_time - start_time}")
