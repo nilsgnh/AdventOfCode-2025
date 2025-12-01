@@ -4,20 +4,15 @@ with open('input.txt', 'r') as file:
 moves = [(line[0][0], int(line[0][1:])) for line in data]
 
 dialCount = 50
-nullAtEndCounter = 0 # Part 1
-nullPassingCounter = 0 # Part 2
+nullAtEndCounter = nullPassingCounter = 0
 
-for move in moves:
-    direction, distance = move
+for direction, distance in moves:
     step = -1 if direction == "L" else 1
-
     for _ in range(distance):
         dialCount = (dialCount + step) % 100
-        if dialCount == 0:
-            nullPassingCounter += 1
-
+        nullPassingCounter += 1 if dialCount == 0 else 0
     if dialCount == 0:
         nullAtEndCounter += 1
 
-print(f"[Part 1]: Anzahl 0en auf Endposition: {nullAtEndCounter}")
-print(f"[Part 2]: Anzahl 0en beim Durchlaufen: {nullPassingCounter}")
+print(f"[Part 1]: {nullAtEndCounter}")
+print(f"[Part 2]: {nullPassingCounter}")
