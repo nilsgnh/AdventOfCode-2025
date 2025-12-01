@@ -11,7 +11,7 @@ for direction, distance in moves:
     if direction == "R":
         nullPassingCounter += (distance + dialCount) // 100
         dialCount = (dialCount + distance) % 100
-    elif direction == "L":
+    else:
         nullPassingCounter += (distance - dialCount) // 100 - ((-1)*dialCount // 100)
         dialCount = (dialCount - distance) % 100
     if dialCount == 0:
