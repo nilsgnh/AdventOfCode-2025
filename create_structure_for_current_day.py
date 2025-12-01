@@ -4,7 +4,7 @@ import requests
 import json
 
 day = datetime.datetime.now().day
-folder_name = f"day{day}"#:02d
+folder_name = f"day{day:02d}"
 os.makedirs(folder_name, exist_ok=True)
 solver_file_path = os.path.join(folder_name, f"slv_{day:02d}.py")
 with open(solver_file_path, 'w') as solver_file:
